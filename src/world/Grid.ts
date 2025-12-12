@@ -10,7 +10,7 @@ export class Grid {
     if (width <= 0 || height <= 0) throw new Error("Grid size must be positive");
     this.width = width;
     this.height = height;
-    this.obstacles = new Set(obstacles.map(Grid.key));
+    this.obstacles = new Set(obstacles.map((p) => Grid.key(this.normalize(p))));
   }
 
   /** Wrap-around (toroidal) normalization */
