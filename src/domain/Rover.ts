@@ -1,7 +1,7 @@
-import type { Direction } from "./Direction";
-import { turnLeft, turnRight } from "./Direction";
-import type { Position } from "../world/Grid";
-import { Grid } from "../world/Grid";
+import type { Direction } from "./Direction.js";
+import { turnLeft, turnRight } from "./Direction.js";
+import type { Position } from "../world/Grid.js";
+import { Grid } from "../world/Grid.js";
 
 export class Rover {
   public readonly position: Position;

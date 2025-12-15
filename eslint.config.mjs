@@ -8,7 +8,7 @@ export default [
     files: ["**/*.ts"],
     languageOptions: {
       parserOptions: {
-        project: true,
+        project: ["./tsconfig.json", "./tsconfig.vitest.json"],
         tsconfigRootDir: import.meta.dirname
       }
     },

@@ -1,6 +1,6 @@
-import { Rover } from "../domain/Rover";
-import type { Direction } from "../domain/Direction";
-import { Grid, type Position } from "../world/Grid";
+import { Rover } from "../domain/Rover.js";
+import type { Direction } from "../domain/Direction.js";
+import { Grid, type Position } from "../world/Grid.js";
 
 export type Command = "L" | "R" | "F";
 
@@ -35,7 +35,7 @@ export function executeCommands(rover: Rover, grid: Grid, commands: string | Com
     }
 
     // cmd === "F"
-    const next = grid.nextForwardPosition(current.position, current.direction as Direction);
+    const next = grid.nextForwardPosition(current.position, current.direction);
     if (grid.isObstacle(next)) {
       return { status: "OBSTACLE", rover: current, obstacle: next };
     }

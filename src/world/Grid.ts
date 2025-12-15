@@ -1,5 +1,6 @@
+import type { Direction } from "../domain/Direction.js";
+
 export type Position = Readonly<{ x: number; y: number }>;
-export type Direction = "N" | "E" | "S" | "W";
 
 export class Grid {
   public readonly width: number;
@@ -13,7 +14,6 @@ export class Grid {
     this.obstacles = new Set(obstacles.map((p) => Grid.key(this.normalize(p))));
   }
 
-  /** Wrap-around (toroidal) normalization */
   normalize(p: Position): Position {
     const x = ((p.x % this.width) + this.width) % this.width;
     const y = ((p.y % this.height) + this.height) % this.height;

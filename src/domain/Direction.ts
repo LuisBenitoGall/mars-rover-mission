@@ -1,13 +1,23 @@
 export type Direction = "N" | "E" | "S" | "W";
 
-const order: Direction[] = ["N", "E", "S", "W"];
+const LEFT: Record<Direction, Direction> = {
+  N: "W",
+  W: "S",
+  S: "E",
+  E: "N"
+};
+
+const RIGHT: Record<Direction, Direction> = {
+  N: "E",
+  E: "S",
+  S: "W",
+  W: "N"
+};
 
 export function turnLeft(d: Direction): Direction {
-  const i = order.indexOf(d);
-  return order[(i + 3) % 4];
+  return LEFT[d];
 }
 
 export function turnRight(d: Direction): Direction {
-  const i = order.indexOf(d);
-  return order[(i + 1) % 4];
+  return RIGHT[d];
 }
