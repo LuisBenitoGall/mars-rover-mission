@@ -36,7 +36,7 @@ El rover mantiene un estado `(x, y, dirección)` y, tras ejecutar la secuencia, 
 ## Instalación
 Instala dependencias de forma reproducible:
 
-```bash
+bash
 npm ci
 
 
